@@ -1,0 +1,25 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Generates a single team structure under a manager and creates corrosponding html",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisAylen/Team-Profile-Generator.git"
+  },
+  "author": "Chris Aylen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChrisAylen/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/ChrisAylen/Team-Profile-Generator#readme",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
