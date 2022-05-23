@@ -4,10 +4,15 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Employee = require("./lib/Employee");
+const buildTeam = require("./lib/buildTeam");
+const { generateCardsArray } = require('./lib/buildTeam');
+
 let menuSlection = '';
 let engineers = [];
 let interns = [];
 let managers = [];
+
+let employees=[];
 //All roles are employees
 //We will always want to ask employee questions regardless of role type (name, id, email)
 
@@ -67,9 +72,10 @@ function askInternQuestions() {
 }
 
 function consloleLogTeam() {
-    console.log(managers);
-    console.log(engineers);
-    console.log(interns);
+    // console.log(managers);
+    // console.log(engineers);
+    // console.log(interns);
+    console.log(employees)
 }
 
 function displayStartMenu() {
@@ -82,7 +88,7 @@ function displayStartMenu() {
         }
     ]).then((response) => {
         menuSlection = response.role;
-        if (menuSlection != 'Exit') {
+        if (menuSlection != 'Exit' && menuSlection != 'Build Team') {
 
             askEmployeeQuestions().then((response) => {
                 switch (menuSlection) {
@@ -91,7 +97,7 @@ function displayStartMenu() {
                             console.log(response);
                             const engineer = new Engineer(employee.employeeName, employee.employeeId, employee.employeeEmail, response.github);
                             //console.log(engineer);
-                            engineers.push(engineer);
+                            employees.push(engineer);
                             consloleLogTeam();
                             displayStartMenu()
                             return engineer;
@@ -101,7 +107,9 @@ function displayStartMenu() {
                         askInternQuestions().then((response) => {
                             console.log(response);
                             const intern = new Intern(employee.employeeName, employee.employeeId, employee.employeeEmail, response.school);
-                            interns.push(intern);
+                            //interns.push(intern);
+                            employees.push(intern)
+                            console.log(employees)
                             //var test = intern.getEmployeeRole();
                             consloleLogTeam();
                             displayStartMenu()
@@ -112,7 +120,8 @@ function displayStartMenu() {
                         askManagerQuestions().then((response) => {
                             console.log(response);
                             const manager = new Manager(employee.employeeName, employee.employeeId, employee.employeeEmail, response.officeNumber);
-                            managers.push(manager);
+                            //managers.push(manager);
+                            employees.push(manager)
                             consloleLogTeam();
                             displayStartMenu()
                             return manager;
@@ -120,6 +129,7 @@ function displayStartMenu() {
                         break;
                     case 'Build Team':
                         promptUser().then((response) => {
+                            generateCardsArray(employees);
                             console.log(response);
                         });
                         break;
@@ -127,9 +137,14 @@ function displayStartMenu() {
 
             });
         }
-        else {
+        else if (menuSlection == 'Build Team') {
+            generateCardsArray(employees);
+            //console.log(cardsArray)
+        }
+        else if (menuSlection == 'Exit') {
             process.exit();
         }
+
     });
 
 }
