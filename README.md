@@ -35,7 +35,7 @@ Thew output will be a HTML file that will be saved in the /dist directory.
     
 ## Screenshots
 
-![alt screen.png](assets/images/screen.png)
+![alt screen.png](./assets/images/screen.PNG)
 
 ## Video
 
