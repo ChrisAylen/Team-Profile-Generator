@@ -15,7 +15,9 @@ This command line applicaiton will generate some HTML to display a team structur
 
 * [Usage](#usage)
 
-* [Screenshot](#screenshot)
+* [Screenshot](#screenshots)
+
+* [Video](#video)
 
 * [Tests](#tests)
 
@@ -34,6 +36,10 @@ Thew output will be a HTML file that will be saved in the /dist directory.
 ## Screenshots
 
 ![alt screen.png](assets/images/screen.png)
+
+## Video
+
+[Demostration Video](https://drive.google.com/file/d/1e4Nu2AG958xepJ-_4azMZl4BtUtuSteh/view?usp=sharing)
     
 
 ## License
