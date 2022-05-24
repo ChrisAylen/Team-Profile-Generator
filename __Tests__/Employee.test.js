@@ -23,6 +23,25 @@ describe('Employee', () => {
             const employee = new Employee("Fred",1,testValue);
             expect(employee.employeeEmail).toBe(testValue);
         });
+        it('Get employee name via method getEMployeeName', () => {
+            const testValue = 'test@test.com';
+            const employee = new Employee(testValue,1,"test@test.com");
+            expect(employee.getEmployeeName()).toBe(testValue);
+        });
+        it('Get employee id via method getEmployeeName', () => {
+            const testValue = 1;
+            const employee = new Employee("Fred",testValue,"test@test.com");
+            expect(employee.getEmployeeId()).toBe(testValue);
+        });
+        it('Get employee email via method getEmployeeEmail', () => {
+            const testValue = 'test@test.com';
+            const employee = new Employee("Fred",1,testValue);
+            expect(employee.getEmployeeEmail()).toBe(testValue);
+        });
+        
+        //Get the employee's name using getEmployeeName()
+        //Get the employee's id using getEmployeeId()
+        //Get the employee's email using getEmployeeEmail()
     });
 });
 

@@ -1,10 +1,9 @@
 const inquirer = require('inquirer');
-const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Employee = require("./lib/Employee");
-const buildTeam = require("./lib/buildTeam");
+//const buildTeam = require("./lib/buildTeam");
 const { generateCardsArray } = require('./lib/buildTeam');
 
 let menuSlection = '';
@@ -34,12 +33,10 @@ function askEmployeeQuestions() {
             message: 'Please enter the employee email address?',
         }
     ]).then((response) => {
-        console.log(response);
         employee = new Employee(response.name, response.id, response.email);
         return employee;
     });
 }
-
 
 function askManagerQuestions() {
     return inquirer.prompt([
@@ -72,9 +69,7 @@ function askInternQuestions() {
 }
 
 function consloleLogTeam() {
-    // console.log(managers);
-    // console.log(engineers);
-    // console.log(interns);
+
     console.log(employees)
 }
 
@@ -96,7 +91,6 @@ function displayStartMenu() {
                         askEngineerQuestions().then((response) => {
                             console.log(response);
                             const engineer = new Engineer(employee.employeeName, employee.employeeId, employee.employeeEmail, response.github);
-                            //console.log(engineer);
                             employees.push(engineer);
                             consloleLogTeam();
                             displayStartMenu()
@@ -107,7 +101,6 @@ function displayStartMenu() {
                         askInternQuestions().then((response) => {
                             console.log(response);
                             const intern = new Intern(employee.employeeName, employee.employeeId, employee.employeeEmail, response.school);
-                            //interns.push(intern);
                             employees.push(intern)
                             console.log(employees)
                             //var test = intern.getEmployeeRole();
@@ -120,7 +113,6 @@ function displayStartMenu() {
                         askManagerQuestions().then((response) => {
                             console.log(response);
                             const manager = new Manager(employee.employeeName, employee.employeeId, employee.employeeEmail, response.officeNumber);
-                            //managers.push(manager);
                             employees.push(manager)
                             consloleLogTeam();
                             displayStartMenu()
@@ -134,12 +126,10 @@ function displayStartMenu() {
                         });
                         break;
                 }
-
             });
         }
         else if (menuSlection == 'Build Team') {
             generateCardsArray(employees);
-            //console.log(cardsArray)
         }
         else if (menuSlection == 'Exit') {
             process.exit();
