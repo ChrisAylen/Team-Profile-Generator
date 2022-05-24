@@ -6,7 +6,8 @@
     
 ## Description
     
-This command line applicaiton will generate some HTML to display a team structure that is defined using this applicaiton
+This command line applicaiton will generate some HTML to display a team structure that is defined using this applicaiton.
+
 
 ## Table of Contents 
 
@@ -14,7 +15,7 @@ This command line applicaiton will generate some HTML to display a team structur
 
 * [Usage](#usage)
 
-* [Contributing](#contributing)
+* [Screenshot](#screenshot)
 
 * [Tests](#tests)
 
@@ -26,22 +27,18 @@ npm i
     
 ## Usage
     
-Follow the promps
+npm run start  - Will run the application
+Using the menu the user can add a team member, remove a team member, and display the team.
+Thew output will be a HTML file that will be saved in the /dist directory.
+    
+## Screenshots
+
+![alt screen.png](assets/images/screen.png)
     
 
-    
-## Credits
-
-
-    
 ## License
     
 This project is licenced under MIT
-    
-    
-## Contributing
-    
-
 
 ## Tests
     
